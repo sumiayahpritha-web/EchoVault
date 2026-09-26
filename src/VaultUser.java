@@ -1,4 +1,4 @@
-public class VaultUser {
+public abstract class VaultUser implements Auditable, RiskAssesment {
     private String name;
      private String userId;
       private String role;
@@ -22,4 +22,5 @@ public String getUserID() {
 public String getRole() {
     return role;
 }
+public abstract void requestAccess(String resource, int clearance);
 }
