@@ -2,7 +2,7 @@ public abstract class VaultUser implements Auditable, RiskAssesment {
     private String name;
      private String userId;
       private String role;
-      public VaultUser(String name, String userId,String role){
+      public VaultUser(String name, String userId, String role){
         this.name = name;
         this.userId = userId;
         this.role = role;
