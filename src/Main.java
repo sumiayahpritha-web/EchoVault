@@ -1,18 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        VaultUser user1 = new VaultUser();
-        user1.name= "jen";
-        user1.userId= "RS-204";
-        user1.role= "Researcher";
+        VaultUser user1 = new VaultUser("jen","RS-204","Researcher");
+        VaultUser user2 = new VaultUser("rob", "RS-209","Researcher");
         user1.displayProfile();
-
-System.out.println();
-        VaultUser user2 = new VaultUser();
-        user2.name= "rob";
-         user2.userId= "RS-209";
-          user2.role= "Researcher";
-           user2.displayProfile();
-
+        System.out.println();
+        user2.displayProfile();
         
     }
     
