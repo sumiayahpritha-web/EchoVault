@@ -4,30 +4,34 @@ public class Main {
        
         System.out.println("Echovault system initialized");
 
-        Student student = new Student("joe","s-205");
-        Researcher researcher =  new Researcher("jomes","R-305");
-        Custodian custodian = new Custodian("joey","C-215");
-
-        student.displayProfile();
-        student.riskCheck();
-        student.audit();
-        student.requestAccess("Research Notes" , 1);
+        //Student student = new Student("joe","s-205");
+        //Researcher researcher =  new Researcher("jomes","R-305");
+        //Custodian custodian = new Custodian("joey","C-215");
+        VaultUser user1 = new Student("joe","s-205");
+         VaultUser user2 = new Researcher("jomes","R-305");
+          VaultUser user3 = new Custodian("joey","C-215");
+        user1.displayProfile();
+        user1.riskCheck();
+        user1.audit();
+        user1.requestAccess("Research Notes" , 1);
+        user1.checkAccess("research stats");
+        user1.checkAccess("research stats", 3);
 
 
         System.out.println();
 
-        researcher.displayProfile();
-        researcher.riskCheck();
-        researcher.audit();
-        researcher.requestAccess("Experimental purposes" , 2);
+        user2.displayProfile();
+        user2.riskCheck();
+        user2.audit();
+        user2.requestAccess("Experimental purposes" , 2);
 
 
          System.out.println();
 
-        custodian.displayProfile();
-        custodian.riskCheck();
-        custodian.audit();
-        custodian.requestAccess("Archieve" , 3);
+        user3.displayProfile();
+        user3.riskCheck();
+        user3.audit();
+        user3.requestAccess("Archieve" , 3);
 
 
 
