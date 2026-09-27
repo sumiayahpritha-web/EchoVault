@@ -16,6 +16,8 @@ public class Main {
         user1.requestAccess("Research Notes" , 1);
         user1.checkAccess("research stats");
         user1.checkAccess("research stats", 3);
+         System.out.println(VaultUser.generateRequestId());
+
 
 
         System.out.println();
@@ -24,6 +26,7 @@ public class Main {
         user2.riskCheck();
         user2.audit();
         user2.requestAccess("Experimental purposes" , 2);
+ System.out.println(VaultUser.generateRequestId());
 
 
          System.out.println();
@@ -33,6 +36,7 @@ public class Main {
         user3.audit();
         user3.requestAccess("Archieve" , 3);
 
+        System.out.println(VaultUser.generateRequestId());
 
 
         

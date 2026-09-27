@@ -7,7 +7,7 @@ public abstract class VaultUser implements Auditable, RiskAssesment {
         this.userId = userId;
         this.role = role;
       }
-public static int requestCounter = 1000;
+public static int requestCounter = 1;
   public static String generateRequestId(){
     requestCounter ++;
     return "EV-" + requestCounter;
@@ -32,6 +32,6 @@ public void checkAccess(String resources){
     System.out.println("Checking resouces for: " + resources);
 }
 public void checkAccess(String resources, int clearance ){
-    System.out.println("Checking " + resources + " with clearence level " + clearance);
+    System.out.println("Checking " + resources + " -with clearence level " + clearance);
 }
 }
