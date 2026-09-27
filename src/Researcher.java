@@ -3,13 +3,13 @@ public class Researcher extends VaultUser{
         super(name, userId, "Researcher");
     }
     @Override
-    public void requestAccess(String resource, int clearance){
+    public void requestAccess(String resource, int clearance) throws InvalidAccessException{
         if(clearance> 2){
-            System.out.println("Access denied: Researcher clearence level is 2 ");  
+            throw new InvalidAccessException("Researcher access is limited to 2") ;  
           }   
-          else{
+          
             System.out.println("Researcher access approved");
-          }
+          
          }
          @Override
          public void audit(){
@@ -21,4 +21,4 @@ public class Researcher extends VaultUser{
          }
      
 
-}
+} 

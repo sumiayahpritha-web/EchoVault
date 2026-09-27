@@ -3,13 +3,13 @@ public class Custodian extends VaultUser{
         super(name, userId, "Custodian");
     }
     @Override
-    public void requestAccess(String resource, int clearance){
+    public void requestAccess(String resource, int clearance) throws InvalidAccessException{
         if(clearance> 3){
-            System.out.println("Access denied: invalid clearance ");  
+             throw new InvalidAccessException("Custodian access is limited to 3") ;  
           }   
-          else{
+          
             System.out.println("Custodian access approved");
-          }
+          
          }
          @Override
          public void audit(){

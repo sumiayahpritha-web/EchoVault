@@ -3,13 +3,13 @@ public class Student extends VaultUser{
         super(name, userId, "student");
     }
     @Override
-    public void requestAccess(String resource, int clearance){
+    public void requestAccess(String resource, int clearance) throws InvalidAccessException{
         if(clearance> 1){
-            System.out.println("Access denied: student clearence level is 1 ");  
+            throw new InvalidAccessException("student access is limited to 1") ;
           }   
-          else{
+        
             System.out.println("Student access approved");
-          }
+        
          }
          @Override
          public void audit(){
