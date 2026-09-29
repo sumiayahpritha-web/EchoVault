@@ -1,0 +1,41 @@
+@startuml
+interface Auditable {
+    + audit() : void
+}
+interface RiskAssessable {
+    + riskCheck() : void
+}
+abstract class VaultUser implements Auditable, RiskAssessable {
+    - name : String
+    - userId : String
+    - role : String
+    - static requestCounter : int
+
+
++ VaultUser(name : String, userId : String, role : String)
++ getName() : String
++ getUserId() : String
++ getRole() : String
++ displayProfile() : void
++ requestAccess(resource : String, clearance : int) : void
++ checkAccess(resource : String) : void
++ checkAccess(resource : String, clearance : int) : void
+# requiredClearance(resource : String) : int
++ static generateRequestId() : String
+}
+
+
+class Student extends VaultUser {
+    + Student(name : String, userId : String)
+}
+class Researcher extends VaultUser {
+    + Researcher(name : String, userId : String)
+}
+class Custodian extends VaultUser {
+    + Custodian(name : String, userId : String)
+}
+class InvalidAccessException extends Exception {
+    + InvalidAccessException(message : String)
+}
+
+@enduml
