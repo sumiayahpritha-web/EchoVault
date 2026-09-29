@@ -1,4 +1,4 @@
-public abstract class VaultUser implements Auditable, RiskAssesment {
+public abstract class VaultUser implements Auditable, RiskAssessable {
     private String name;
      private String userId;
       private String role;
