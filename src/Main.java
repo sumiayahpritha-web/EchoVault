@@ -2,30 +2,35 @@ public class Main {
     public static void main(String[] args) {
        
        
-        System.out.println("Echovault system initialized");
+        System.out.println("Echovault system initialized\n");
 
         //Student student = new Student("joe","s-205");
         //Researcher researcher =  new Researcher("jomes","R-305");
         //Custodian custodian = new Custodian("joey","C-215");
-        VaultUser student = new Student("joe","s-205");
-         VaultUser researcher = new Researcher("jomes","R-305");
-          VaultUser custodian = new Custodian("joey","C-215");
+
+        VaultUser student = new Student("X","S-205");
+         VaultUser researcher = new Researcher("Y","R-305");
+          VaultUser custodian = new Custodian("Z","C-215");
         student.displayProfile();
         student.riskCheck();
         student.audit();
-        student.checkAccess("research stats");
-        student.checkAccess("research stats", 1);
+
+        System.out.println();
+        student.checkAccess("Encryption Keys");
+        student.checkAccess("Encryption Keys", 3);
+
+        System.out.println();
          System.out.println(VaultUser.generateRequestId());
           try{
-            student.requestAccess("Research Notes" , 5);
+            student.requestAccess("Encryption Keys" , 3);
         }
         catch(InvalidAccessException e){
-            System.out.println("Status denied");
+            System.out.println("Status : Denied");
             System.out.println("Reason: " + e.getMessage());
 
         }
         finally{
-    System.out.println("Request processing");
+    System.out.println("Request processing completed.");
 }
 
 
@@ -35,11 +40,15 @@ public class Main {
         researcher.displayProfile();
         researcher.riskCheck();
         researcher.audit();
-        researcher.checkAccess("Previous year research");
-        researcher.checkAccess("Previous year research", 2);
+       System.out.println();
+
+        researcher.checkAccess("xyz");
+        researcher.checkAccess("xyz", 2);
+        System.out.println();
+
         System.out.println(VaultUser.generateRequestId());
         try{
-            researcher.requestAccess("Experimental purposes" , 2);
+            researcher.requestAccess("xyz" , 2);
         }
         catch(InvalidAccessException e){
             System.out.println("Status denied");
@@ -47,7 +56,7 @@ public class Main {
 
         }
         finally{
-    System.out.println("Request processing");
+    System.out.println("Request processing completed.");
 }
 
          System.out.println();
@@ -55,13 +64,19 @@ public class Main {
         custodian.displayProfile();
         custodian.riskCheck();
         custodian.audit();
+        System.out.println();
+
+
         custodian.checkAccess("Confidential archieve");
         custodian.checkAccess("Confidential archieve", 3);
+
+         System.out.println();
+
     
         System.out.println(VaultUser.generateRequestId());
 
        try{
-            custodian.requestAccess("Archieve" , 3);
+            custodian.requestAccess("Confidential Archieve" , 3);
         }
         catch(InvalidAccessException e){
             System.out.println("Status denied");
@@ -69,7 +84,7 @@ public class Main {
 
         }
 finally{
-    System.out.println("Request processing");
+    System.out.println("Request processing completed.");
 }
 }
     

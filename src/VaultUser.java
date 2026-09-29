@@ -30,10 +30,30 @@ public abstract void requestAccess(String resource, int clearance) throws Invali
 
 
 
-public void checkAccess(String resources){
-    System.out.println("Checking resouces for: " + resources);
+public void checkAccess(String resource){
+    System.out.println("Checking resouces for: " + resource);
 }
-public void checkAccess(String resources, int clearance ){
-    System.out.println("Checking " + resources + " -with clearence level " + clearance);
+public void checkAccess(String resource, int clearance ){
+    System.out.println("Checking " + resource + " -with clearence level " + clearance);
+}
+protected int requiredClearence(String resource) throws InvalidAccessException{
+    switch (resource) {
+        case "Research notes":
+        case "Statistics":
+        return 1;    
+    
+
+        case "Experimental Data":
+            return 2;
+
+        case "Encryption Keys":
+        case "Confidential Archieve":
+        return 3; 
+
+        default:
+            throw new  InvalidAccessException("Unknown resouce: " + resource);
+           
+    }
 }
 }
+

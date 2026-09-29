@@ -4,7 +4,8 @@ public class Custodian extends VaultUser{
     }
     @Override
     public void requestAccess(String resource, int clearance) throws InvalidAccessException{
-        if(clearance> 3){
+        int required = requiredClearence(resource);
+        if(clearance > required ||clearance> 3){
              throw new InvalidAccessException("Custodian access is limited to 3") ;  
           }   
           

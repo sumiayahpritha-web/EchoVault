@@ -4,7 +4,8 @@ public class Researcher extends VaultUser{
     }
     @Override
     public void requestAccess(String resource, int clearance) throws InvalidAccessException{
-        if(clearance> 2){
+       int required = requiredClearence(resource);
+        if(clearance > required ||clearance> 2){
             throw new InvalidAccessException("Researcher access is limited to 2") ;  
           }   
           
